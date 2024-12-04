@@ -1,13 +1,37 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = $_POST['name'] ?? 'Unknown';
+    $score = $_POST['score'] ?? 0;
+
+    echo "<h1>Thank you, $name!</h1>";
+    echo "<p>Your score: $score</p>";
+    exit; 
+}
+?>
+<!-- POST METHOD DI AKHIR!!! -->
+ <!-- POST METHOD DI AKHIR!!! -->
+  <!-- POST METHOD DI AKHIR!!! -->
+   <!-- POST METHOD DI AKHIR!!! -->
+    <!-- POST METHOD DI AKHIR!!! -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="quiz-container" id="quiz">
+    <div id="name-form">
+        <h2>Fill Form Below To Start The Quiz</h2>
+        <form id="start-form">
+            <input type="text" id="username" name="username" placeholder="Your Name" required>
+            <button type="submit">Start Quiz</button>
+        </form>
+    </div>
+
+    <div class="quiz-container" id="quiz" style="display: none;">
         <div class="quiz-header">
             <h2 id="question">Question Text</h2>
             <ul>
@@ -29,8 +53,8 @@
                 </li>
             </ul>
         </div>
+        <button id="submit">SUBMIT</button>
     </div>
-    <button id="submit">SUBMIT</button>
 
     <script src="./main.js"></script>
 </body>
